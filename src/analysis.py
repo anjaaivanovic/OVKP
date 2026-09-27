@@ -2,8 +2,15 @@ from pyspark.sql import SparkSession
 from pyspark.sql.window import Window
 from pyspark.sql.functions import avg
 from pathlib import Path
+import os
 
 from logger import log
+
+
+_JAVA17_HOME = "/usr/lib/jvm/java-17-openjdk-amd64"
+if os.path.isdir(_JAVA17_HOME):
+    os.environ["JAVA_HOME"] = _JAVA17_HOME
+    os.environ["PATH"] = f"{_JAVA17_HOME}/bin:" + os.environ.get("PATH", "")
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
