@@ -118,7 +118,7 @@ Registers the cleaned data as a temporary SQL view (`traffic`) and runs 7 querie
 
 Sequentially runs `download.py` → `transform.py` → `analysis.py` as steps, logging each one in a standard format (`[timestamp] description`). If a step fails (non-zero exit code), the pipeline stops immediately instead of silently continuing to the next step with invalid data.
 
-### `notebooks/analiza.ipynb` — Visualization
+### `notebooks/analysis.ipynb` — Visualization
 
 Loads all 7 results from `results/` and displays:
 
